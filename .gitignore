@@ -1,5 +1,5 @@
 node_modules
 yarn.lock
 .env
-
-/biuld/server/index
+biuld
+/biuld/server/routes
