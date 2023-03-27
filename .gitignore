@@ -2,4 +2,4 @@ node_modules
 yarn.lock
 .env
 
-/biuld
+/biuld/server
