@@ -14,15 +14,15 @@ interface Ifilter {
 }
 
 
-export const CreatequeryValidation = Validation({
-    body: yup.object().shape({
+export const CreatequeryValidation = Validation((getShecma) =>({
+    body: getShecma<ICidade>(yup.object().shape({
         nome: yup.string().required().min(3),
         estado: yup.string().required().min(3),
-    }),
-        query: yup.object().shape({
+    })),
+        query:getShecma<Ifilter>(yup.object().shape({
         filter: yup.string().required().min(3)
-    })
-});
+    }))
+}));
 
 
 
