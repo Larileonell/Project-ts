@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
 
 
 router.post('/cidades', 
-cidadesControllers.CreatebodyValidation, 
 cidadesControllers.CreatequeryValidation,
 cidadesControllers.create);
 

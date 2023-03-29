@@ -12,19 +12,18 @@ interface ICidade {
 interface Ifilter {
     filter?: string;
 }
-const queryValidation: yup.ObjectSchema<Ifilter> = yup.object().shape({
-    filter: yup.string().required().min(3)
-})
 
 
-const bodyvalidation: yup.ObjectSchema<ICidade> = yup.object().shape({
-    nome: yup.string().required().min(3),
-    estado: yup.string().required().min(3),
-})
+export const CreatequeryValidation = Validation({
+    body: yup.object().shape({
+        nome: yup.string().required().min(3),
+        estado: yup.string().required().min(3),
+    }),
+        query: yup.object().shape({
+        filter: yup.string().required().min(3)
+    })
+});
 
-
-export const CreatequeryValidation = Validation('body',queryValidation);
-export const CreatebodyValidation = Validation('query',bodyvalidation);
 
 
 
