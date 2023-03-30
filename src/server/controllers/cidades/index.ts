@@ -1,5 +1,7 @@
-import * as create from "./create"
-
-export const cidadesControllers = {
-...create,
-}
+import * as create from './create';
+import * as getAll from './GetAll';
+export const CidadesController = {
+    ...create,
+    ...getAll,
+   
+  };
