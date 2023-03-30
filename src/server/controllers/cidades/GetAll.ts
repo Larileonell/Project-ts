@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import * as yup from 'yup';
 
+
 import { validation } from '../../shared/middlewares';
 
 
@@ -12,9 +13,9 @@ interface IQueryProps {
 }
 export const getAllValidation = validation((getSchema) => ({
   query: getSchema<IQueryProps>(yup.object().shape({
-    page: yup.number().notRequired().moreThan(0),
-    limit: yup.number().notRequired().moreThan(0),
-    filter: yup.string().notRequired(),
+    page: yup.number().optional().moreThan(0),
+    limit: yup.number().optional().moreThan(0),
+    filter: yup.string().optional(),
   })),
 }));
 
